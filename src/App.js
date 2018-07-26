@@ -12,7 +12,7 @@ class App extends Component {
         "description": "You are learning react!!",
         "orgName": "Disney",
         "country": "US",
-        "investigate": false,
+        "saved": false,
         "labels": "Fraud"
       },
       {
@@ -30,27 +30,36 @@ class App extends Component {
         "description": "Yipee!",
         "orgName": "Dance Dance",
         "country": "UK",
-        "investigate": false,
+        "saved": false,
         "labels": "low-risk"
       }
     ]
   }
 
+  toggleSaved = (id) => {
+    console.log('here in toggleSaved function');
+    // for the event that has the id of the clicked on event, change the opposite, true to false
+    // set state with new messages
+    let events = this.state.events.map( event => {
+      if ( id === event.id ) {
+        event.saved = !event.saved
+      }
+      return
+    })
 
-  toggleInvestigateHandler = (evnt) => {
-    console.log('here in toggle investigate', evnt); // id of clicked star
-    evnt.investigate = !evnt.investigate
-    console.log('evnt.investigate after switch', evnt.investigate); //true
-    this.setState(this.state.evnt.investigate)
+    // this.setState(events)
+    this.setState({...this.state.events, events})
+
   }
 
   render() {
     return (
       <div>
         <PageComponent
+          toggleSaved = {this.toggleSaved}
           events = {this.state.events}
-          toggleInvestigateHandler = {this.toggleStarHandler}
         />
+        <p />
         <Button color='green'>Get New Alerts</Button>
       </div>
     );

@@ -4,14 +4,13 @@ import { Table, Icon, Label } from "semantic-ui-react";
 const TableRow = (props) => {
   console.log(props.event.description, 'props')
 
-let toggleInvestigateHandler = (banana) => {
-    //onClick change display if on => off
-    console.log('here in toggle investigate', banana); // id of clicked star
-    console.log(banana.event.investigate);
-    banana.event.investigate = !banana.event.investigate
-    console.log('event.investigate after switch', banana.event.investigate); //true
-    // this.setState(this.state.banana.investigate)
-    // Update setState of event.investigate
+let _handleToggleSaved = event => {
+    event.preventDefault();
+
+    console.log('props', props.event.eventId);
+    console.log('event', event);
+
+    // ToggleSaved(props.event.eventId)
   }
 
   return (
@@ -26,9 +25,9 @@ let toggleInvestigateHandler = (banana) => {
         {props.event.country}
       </Table.Cell>
       <Table.Cell>
-        <button class="circular ui toggle compact icon orange button">
+        <button class={`circular ui toggle compact icon ${props.event.saved ? 'orange':''} button`}>
           <i class="check icon"
-          onClick={ () => toggleInvestigateHandler(props)}></i>
+          onClick={_handleToggleSaved}></i>
         </button>
       </Table.Cell>
     </Table.Row>
@@ -36,6 +35,11 @@ let toggleInvestigateHandler = (banana) => {
 }
 
 export default TableRow
+
+//  <`Table.Cell ${fraud?? 'error': ''`>
+
+//${props.event.investigate ? 'orange':''} button`}>
+  // <i class="check icon"
 
 // <button class="ui compact icon toggle yellow button">
 //   <i class="check icon"></i>

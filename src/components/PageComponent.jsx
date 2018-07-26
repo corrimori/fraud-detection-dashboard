@@ -7,6 +7,8 @@ const PageComponent = (props) => {
 
   console.log('props', props);
   console.log('props.events', props.events);
+  console.log('props.toggleSaved', props.toggleSaved);
+
 
   return (
     <div>
@@ -14,7 +16,9 @@ const PageComponent = (props) => {
         <i class="shield alternate icon" />
         First Alert Fraud Detection
       </Header>
-      <TableComponent events = {props.events}/>
+      <TableComponent
+        toggleSaved = {props.toggleSaved}
+        events = {props.events}/>
     </div>
   )
 
