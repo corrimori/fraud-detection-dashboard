@@ -13,7 +13,7 @@ const PageComponent = (props) => {
   return (
     <div>
       <Header as='h3' block>
-        <i class="shield alternate icon" />
+        <i className="shield alternate icon" />
         First Alert Fraud Detection
       </Header>
       <TableComponent

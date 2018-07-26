@@ -2,31 +2,35 @@ import React from 'react'
 import { Table, Icon, Label } from "semantic-ui-react";
 
 const TableRow = (props) => {
-  console.log(props.event.description, 'props')
+  //console.log(props.event.description, 'props')
 
 let _handleToggleSaved = event => {
     event.preventDefault();
 
-    console.log('props', props.event.eventId);
+    console.log('props', props.event.id);
     console.log('event', event);
 
-    // ToggleSaved(props.event.eventId)
+    //console.log("toggle saved function", toggleSaved)
+    console.log("toggle saved function off of props", props.toggleSaved)
+
+    props.toggleSaved(props.event.id)
   }
 
   return (
     <Table.Row>
-      <Table.Cell>{props.event.eventId}</Table.Cell>
+      <Table.Cell>{props.event.id}</Table.Cell>
+      <Table.Cell>{props.event.probability}</Table.Cell>
       <Table.Cell error>
         <Icon name='attention' />
         {props.event.eventName}
       </Table.Cell>
-      <Table.Cell>{props.event.description}</Table.Cell>
+      <Table.Cell>{props.event.country}</Table.Cell>
       <Table.Cell>
         {props.event.country}
       </Table.Cell>
       <Table.Cell>
-        <button class={`circular ui toggle compact icon ${props.event.saved ? 'orange':''} button`}>
-          <i class="check icon"
+        <button className={`circular ui toggle compact icon ${props.event.saved ? 'orange':''} button`}>
+          <i className="check icon"
           onClick={_handleToggleSaved}></i>
         </button>
       </Table.Cell>
