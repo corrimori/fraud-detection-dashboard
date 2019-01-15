@@ -1,0 +1,32 @@
+[
+{"object_id": 5455382, "event_created": 1360286059, "country": "", "prediction": "Fraud"},
+{"object_id": 5469166, "event_created": 1360447347, "country": "GB", "prediction": "Fraud"},
+{"object_id": 5698564, "event_created": 1362461347, "country": "AU", "prediction": "Fraud"},
+{"object_id": 5468904, "event_created": 1360443623, "country": "KE", "prediction": "Fraud"},
+{"object_id": 5469338, "event_created": 1360450106, "country": "US", "prediction": "Fraud"}]
+
+
+
+def pipeline(df):
+    date_cols = ['approx_payout_date','event_created', 'event_end', 'event_published', 'event_start', 'user_created']
+    nan_zero = ['has_header','delivery_method']
+    nan_none = ['country','venue_country','venue_latitude', 'venue_longitude', 'venue_name', 'venue_state']
+
+    df.replace(['fraudster_event', 'premium', 'spammer_warn', 'fraudster',
+      'spammer_limited', 'spammer_noinvite', 'locked', 'tos_lock',
+      'tos_warn', 'fraudster_att', 'spammer_web', 'spammer'], [1, 0, 0, 1,0,0,0,0,0,1,0,0], inplace=True)
+
+    df.rename(index=str, columns={"acct_type": "fraud"}, inplace=True)
+
+    for col in date_cols:
+        df[col] = pd.to_datetime(df[col],unit='s')
+
+    for col in nan_zero:
+        df[col].fillna(0,inplace=True)
+
+    for col in nan_none:
+        df[col].fillna('None',inplace=True)
+
+    df['event_published'].fillna(df['event_created'],inplace=True)
+
+    return df

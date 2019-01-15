@@ -6,10 +6,10 @@ const TableComponent = (props) => (
     <Table striped fixed>
       <Table.Header>
         <Table.Row>
-          <Table.HeaderCell width={1}>Event Id</Table.HeaderCell>
-          <Table.HeaderCell width={2}>Probability</Table.HeaderCell>
-          <Table.HeaderCell width={3}>Event Name</Table.HeaderCell>
-          <Table.HeaderCell width={5}>Event Description</Table.HeaderCell>
+          <Table.HeaderCell width={2}>Event Id</Table.HeaderCell>
+          <Table.HeaderCell width={1}>Probability</Table.HeaderCell>
+          <Table.HeaderCell width={1}>Prediction</Table.HeaderCell>
+          <Table.HeaderCell width={6}>Name</Table.HeaderCell>
           <Table.HeaderCell width={2}>Country</Table.HeaderCell>
           <Table.HeaderCell width={1}>Save</Table.HeaderCell>
         </Table.Row>
@@ -28,6 +28,3 @@ const TableComponent = (props) => (
 );
 
 export default TableComponent;
-
-// eventsRow = props.events.map( (evnt) => {
-//   console.log(evnt)
