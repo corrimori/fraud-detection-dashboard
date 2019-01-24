@@ -6,7 +6,7 @@ Created a dashboard using React to display modeled data from a small group of Da
 
 **Screenshot**
 
-<div align="center" style="margin-bottom: 25px"><img width='500px' alt="dashboard screenshot" src="public/fraudAlert.png"/></div>
+<div align="center" style="margin-bottom: 25px"><img width='650px' alt="dashboard screenshot" src="public/fraudAlert.png"/></div>
 
 <!-- deployed -->
 <!-- <p align="center"><a href=""></a></p> -->
