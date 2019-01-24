@@ -1,6 +1,7 @@
-### Fraud Detection Dashboard
+-> ##Fraud Detection Dashboard <-
 
 **Project**
+
 Created a dashboard using React to display modeled data from a small group of Data Scientist. The purpose of the data is to predict the potential of fraud in events.
 
 - This project was a collaboration of working between data science and web development.
