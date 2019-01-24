@@ -112,6 +112,7 @@ class App extends Component {
   };
 
   componentDidMount() {
+    console.log('in component did mount...');
     fetch('http://107.22.115.226:3333/inference')
       .then(response => response.json())
       .then(events => {
@@ -126,15 +127,13 @@ class App extends Component {
           };
         });
         this.setState({ events: newEvents });
-        console.log(this.state.events, 'EVENTS IN STATE');
+        console.log(this.state.events, '<<<<<<EVENTS IN STATE');
       });
   }
 
+  // for the event that has the id of the clicked on event, change the opposite, true to false
+  // set state with new messages
   toggleSaved = id => {
-    console.log(this.state.events, '  EVENTS IN STATE');
-    console.log(id, 'ID here in toggleSaved function');
-    // for the event that has the id of the clicked on event, change the opposite, true to false
-    // set state with new messages
     let events = this.state.events.map(event => {
       console.log(event.id, 'event.id');
       console.log(id, 'ID');
@@ -147,9 +146,9 @@ class App extends Component {
 
     // this.setState(events)
     this.setState({ ...this.state.events, events });
-    console.log('new events array', events);
-    console.log('state events', this.state.events);
-    console.log('...state events', ...this.state.events);
+    console.log('new events array ---->', events);
+    console.log('state events ---->', this.state.events);
+    console.log('...state events ---->', ...this.state.events);
   };
 
   render() {
