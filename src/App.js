@@ -91,6 +91,7 @@ class App extends Component {
       },
     ],
 
+    // sample data while developing
     // events: [
     //   {
     //     "id": 1,
@@ -127,7 +128,7 @@ class App extends Component {
           };
         });
         this.setState({ events: newEvents });
-        console.log(this.state.events, '<<<<<<EVENTS IN STATE');
+        // console.log(this.state.events, '<<<<<<EVENTS IN STATE');
       });
   }
 
@@ -146,9 +147,6 @@ class App extends Component {
 
     // this.setState(events)
     this.setState({ ...this.state.events, events });
-    console.log('new events array ---->', events);
-    console.log('state events ---->', this.state.events);
-    console.log('...state events ---->', ...this.state.events);
   };
 
   render() {

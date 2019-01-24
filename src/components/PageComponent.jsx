@@ -3,9 +3,6 @@ import { Header } from 'semantic-ui-react';
 import TableComponent from './TableComponent';
 
 const PageComponent = props => {
-  console.log('In PageComponent ...')
-  console.log('props >>>>>', props);
-  console.log('props.events >>>>>', props.events);
 
   return (
     <div>
