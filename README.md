@@ -17,4 +17,4 @@ Create a dashboard using React to display modeled data from a small group of Dat
 
 ---
 
-Built by @CorriMori during Galvanize’s Web Development Immersive.
+###### Built by @CorriMori during Galvanize’s Web Development Immersive
